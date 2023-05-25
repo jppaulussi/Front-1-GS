@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #FFD700;
     margin: 0;
     padding: 0;
   }
@@ -20,6 +20,7 @@ body {
   }
   .container input[type="text"],
   .container input[type="password"],
+  .container input[type="email"],
   .container select {
     width: 90%;
     padding: 10px;
@@ -30,7 +31,7 @@ body {
   .container button {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #FF6347;
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -60,4 +61,19 @@ body {
 
     margin-right: 10px;
 
+  }
+
+  .rounded-t-5 {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+
+  @media (min-width: 992px) {
+    .rounded-tr-lg-0 {
+      border-top-right-radius: 0;
+    }
+
+    .rounded-bl-lg-5 {
+      border-bottom-left-radius: 0.5rem;
+    }
   }
