@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+    <div class="Cabecalho">
+
+        <img class="image1" src="Image/Fav_icon.png" width=80 height=60>
+        <img class="image2" src="Image/fiap.jpg" width=80 height=60>
+    
+      </div>
+    <div class="container">
+        <h1><i class="fas fa-user-plus"></i> Cadastro de Usuário</h1>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-4 form-group">
+                    <label for="foto">Foto:</label>
+                    <input type="file" name="foto" id="foto" class="form-control">
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome" class="form-control" required>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" class="form-control" required>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="NomeUser">Nome de Usuario</label>
+                    <input type="text" name="NomeUser" id="NomeUser" class="form-control" required>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="CEP">CEP:</label>
+                    <input type="password" name="CEP" id="CEP" class="form-control">
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="senha" class="form-control">
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="confirma_senha">Confirma Senha:</label>
+                    <input type="password" name="confirma_senha" id="confirma_senha" class="form-control" required>
+                    <div id="alerta" class="alert alert-danger" style="display: none;"></div>
+                </div>
+            </div>
+            <div class="text-end">
+                <input type="submit" value="Cadastrar" name="btnCadastrar" class="btn btn-success mt-2 mb-2">
+            </div>
+        </form>
+    </div>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        // Código JavaScript omitido para brevidade
+    </script>
+</body>
+</html>

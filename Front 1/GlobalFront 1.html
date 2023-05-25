@@ -8,18 +8,31 @@
 <body>
   <div class="Cabecalho">
 
-    <img class="image1" src="Image/Fav_icon.png" width=80 height=60>
-    <img class="image2" src="Image/fiap.jpg" width=80 height=60>
+    <img class="image1" src="Image/Fav_icon.png" width=100 height=80>
+    <img class="image2" src="Image/fiap.jpg" width=100 height=80>
 
   </div>
   <div class="container">
     <h2>Login</h2>
     <form id="loginForm">
       <input type="text" id="nomeCompleto" placeholder="Nome completo" required><br>
-      <input type="text" id="endereco" placeholder="Endereço" required><br>
-      <input type="text" id="itemDoacao" placeholder="Item para doação" required><br>
-      <button type="submit">Entrar</button>
-      <button type="submit">Cadastrar</button>
+      <input type="text" id="Senha" placeholder="Senha" required><br>
+      <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+          <!-- Checkbox -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+            <label class="form-check-label" for="form2Example31"> Remember me </label>
+          </div>
+        </div>
+
+        <div class="col">
+          <!-- Simple link -->
+          <a href="#!">Forgot password?</a>
+        </div>
+      </div>
+      <button type="submit" formaction="Formulario.html">Entrar</button>
+      <button type="submit" formaction="Cadastro.html">Cadastrar</button>
     </form>
   </div>
 
