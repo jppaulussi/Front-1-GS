@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações de Coleta</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <style>
+        .card {
+            width: 300px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .card p {
+            margin-bottom: 0;
+        }
+
+        #map {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Informações de Coleta</h1>
+
+        <div id="cardsContainer"></div>
+        <div id="map"></div>
+
+        <button formaction="LoginTela.html" onclick="deslogar()">Deslogar</button>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTfTXawwaCKJV_KWm5K-6jgct9oZk_yTo&callback=initMap" async defer></script>
+        <script>
+            // Função para buscar as informações do banco de dados
+            function buscarInformacoes() {
+                // Simulando a busca das informações do banco de dados
+                const informacoes = [
+                    { nome: 'João Silva', endereco: 'Rua A, 123', alimento: 'Arroz', dataColeta: '10/05/2023', latitude: -23.550520, longitude: -46.633308 },
+                    { nome: 'Maria Santos', endereco: 'Av. B, 456', alimento: 'Feijão', dataColeta: '15/05/2023', latitude: -23.562656, longitude: -46.654451 },
+                    { nome: 'Carlos Oliveira', endereco: 'Travessa C, 789', alimento: 'Macarrão', dataColeta: '20/05/2023', latitude: -23.548939, longitude: -46.638823 }
+                ];
+
+                const cardsContainer = document.getElementById('cardsContainer');
+
+                // Iterar sobre as informações e criar os cards
+                informacoes.forEach(function (info) {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+
+                    const nomeElement = document.createElement('h3');
+                    nomeElement.textContent = 'Nome: ' + info.nome;
+
+                    const enderecoElement = document.createElement('p');
+                    enderecoElement.textContent = 'Endereço: ' + info.endereco;
+
+                    const alimentoElement = document.createElement('p');
+                    alimentoElement.textContent = 'Alimento: ' + info.alimento;
+
+                    const dataColetaElement = document.createElement('p');
+                    dataColetaElement.textContent = 'Data de Coleta: ' + info.dataColeta;
+
+                    card.appendChild(nomeElement);
+                    card.appendChild(enderecoElement);
+                    card.appendChild(alimentoElement);
+                    card.appendChild(dataColetaElement);
+
+                    cardsContainer.appendChild(card);
+                });
+            }
+
+            // Função para inicializar o mapa
+            function initMap() {
+                // Coordenadas do centro do mapa
+                const center = { lat: -23.550520, lng: -46.633308 };
+
+                // Criar o mapa
+                const map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 12,
+                    center: center
+                });
+
+                // Adicionar marcadores para cada informação
+                const informacoes = [
+                    { nome: 'João Silva', endereco: 'Rua A, 123', alimento: 'Arroz', dataColeta: '10/05/2023', latitude: -23.550520, longitude: -46.633308 },
+                    { nome: 'Maria Santos', endereco: 'Av. B, 456', alimento: 'Feijão', dataColeta: '15/05/2023', latitude: -23.562656, longitude: -46.654451 },
+                    { nome: 'Carlos Oliveira', endereco: 'Travessa C, 789', alimento: 'Macarrão', dataColeta: '20/05/2023', latitude: -23.548939, longitude: -46.638823 }
+                ];
+
+                informacoes.forEach(function (info) {
+                    const marker = new google.maps.Marker({
+                        position: { lat: info.latitude, lng: info.longitude },
+                        map: map,
+                        title: info.nome
+                    });
+                });
+            }
+
+            // Função para deslogar
+            function deslogar(){
+                // Implemente as ações necessárias para deslogar o usuário aqui
+                alert('Usuário deslogado com sucesso!');
+            }
+
+            // Chamar as funções ao carregar a página
+            window.onload = function () {
+                buscarInformacoes();
+            };
+        </script>
+    </div>
+</body>
+</html>
