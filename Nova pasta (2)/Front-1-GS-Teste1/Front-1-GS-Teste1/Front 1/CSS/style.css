@@ -13,7 +13,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-top: 100px;
+    margin-top: 40px;
   }
   .container h2 {
     margin-bottom: 20px;
@@ -55,11 +55,10 @@ body {
   .image1, .image2 {
     display: inline-block;
   }
-  
-
+ 
   .image1{
 
-    margin-right: 10px;
+    margin-right: 40px;
 
   }
 
@@ -76,4 +75,6 @@ body {
     .rounded-bl-lg-5 {
       border-bottom-left-radius: 0.5rem;
     }
+
+
   }
