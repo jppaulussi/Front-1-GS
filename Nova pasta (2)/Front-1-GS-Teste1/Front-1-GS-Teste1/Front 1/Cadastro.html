@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="css/style.css"> 
+
+
+</head>
+<body>
+    <div class="Cabecalho">
+        <img class="image1" src="Image/Fav_icon.png" width=80 height=60>
+        <img class="image2" src="Image/fiap.png" width=80 height=60>
+    </div>
+    <div class="container">
+        <h1><i class="fas fa-user-plus"></i> Cadastro de Usuário</h1>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-4 form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome" class="form-control" required>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" class="form-control" required>
+                </div>
+                
+                <div class="col-md-4 form-group">
+                    <label for="login">Login:</label>
+                    <input type="text" name="Login" id="Login" class="form-control" required>
+                </div>
+
+                <div class="col-md-4 form-group">
+                    <label for="email">Endereço:</label>
+                    <input type="text" name="Login" id="endereco" class="form-control" required>
+                </div>
+                
+                <div class="col-md-4 form-group">
+                    <label for="email">Senha:</label>
+                    <input type="password" name="Senha" id="senha" class="form-control" required>
+                </div>
+
+
+
+                <!-- Outros campos do formulário -->
+            </div>
+            <div class="text-end">
+                <input type="submit" value="Cadastrar" name="btnCadastrar" class="btn btn-success mt-2 mb-2"  onclick="obterValoresFormulario">
+            </div>
+        </form>
+    </div>
+<script>
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+
+            // Aqui você pode adicionar a lógica para enviar os dados do formulário para o servidor e realizar o cadastro
+
+            // Exibe o alerta de confirmação
+            const confirmacao = window.confirm('Deseja cadastrar o usuário?');
+
+            if (confirmacao) {
+                // Código para prosseguir com o cadastro
+                alert('Usuário cadastrado com sucesso!');
+                form.reset();
+
+                // Redireciona para a página principal
+                window.location.href = 'GlobalFront 1.html';
+            } else {
+                // Código caso o usuário cancele o cadastro
+                alert('Cadastro cancelado.');
+            }
+            
+        });
+    </script>
+</body>
+</html>
