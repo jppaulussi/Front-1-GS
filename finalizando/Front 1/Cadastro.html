@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="css/style.css"> 
+
+
+</head>
+<body>
+    <div class="Cabecalho">
+        <img class="image1" src="Image/Fav_icon.png" width=80 height=60>
+        <img class="image2" src="Image/fiap.png" width=80 height=60>
+    </div>
+    <div class="container">
+        <h1><i class="fas fa-user-plus"></i> Cadastro de Usuário</h1>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-4 form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome" class="form-control" required>
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" class="form-control" required>
+                </div>
+                
+                <div class="col-md-4 form-group">
+                    <label for="login">Login:</label>
+                    <input type="text" name="Login" id="Login" class="form-control" required>
+                </div>
+
+                <div class="col-md-4 form-group">
+                    <label for="email">Endereço:</label>
+                    <input type="text" name="Login" id="endereco" class="form-control" required>
+                </div>
+                
+                <div class="col-md-4 form-group">
+                    <label for="email">Senha:</label>
+                    <input type="password" name="Senha" id="senha" class="form-control" required>
+                </div>
+
+
+
+                <!-- Outros campos do formulário -->
+            </div>
+            <div class="text-end">
+                <input type="submit" value="Cadastrar" name="btnCadastrar" class="btn btn-success mt-2 mb-2"  onclick="obterValoresFormulario">
+            </div>
+        </form>
+    </div>
+<script>
+document.querySelector('form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const nome = document.getElementById('nome').value;
+  const email = document.getElementById('email').value;
+  const login = document.getElementById('Login').value;
+  const endereco = document.getElementById('endereco').value;
+  const senha = document.getElementById('senha').value;
+
+  const data = {
+    "nome": nome,
+    "email": email,
+    "login": login,
+    "endereco": endereco,
+    "senha": senha
+  };
+
+  const url = 'http://ec2-54-94-242-3.sa-east-1.compute.amazonaws.com:8080/usuarios/cadastrar';
+
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Erro na requisição.');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Usuário cadastrado com sucesso:', data);
+      // Realizar as ações necessárias após o cadastro bem-sucedido
+      alert('Usuário cadastrado com sucesso!');
+      form.reset();
+      window.location.href = 'GlobalFront 1.html'; // Redirecionar para a página principal
+    })
+    .catch(error => {
+      console.error('Erro na requisição:', error);
+      // Exibir mensagem de erro
+      alert('Erro ao cadastrar usuário. Por favor, tente novamente.');
+    });
+});
+
+    </script>
+</body>
+</html>
