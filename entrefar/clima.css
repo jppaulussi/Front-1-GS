@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.city-selection {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    margin-left: 10px;
+}
+
+.weather-info {
+    text-align: center;
+}
+
+#weather-description {
+    font-style: italic;
+    margin-top: 5px;
+}
+
+#temperature {
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 10px;
+}
